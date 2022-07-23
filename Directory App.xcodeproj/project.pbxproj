@@ -35,6 +35,13 @@
 		4B1B40C2288C1AE70063989C /* ViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1B409F288BF90C0063989C /* ViewModelProtocol.swift */; };
 		4B1B40C3288C1AEA0063989C /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1B40A0288BF90C0063989C /* ViewModel.swift */; };
 		4B1B40C4288C1AEC0063989C /* ModelledViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1B40A1288BF90D0063989C /* ModelledViewController.swift */; };
+		4B1B40C6288C3A7F0063989C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1B40C5288C3A7F0063989C /* Constants.swift */; };
+		4B1B40C9288C4C470063989C /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1B40C8288C4C470063989C /* NetworkManager.swift */; };
+		4B1B40CA288C4C470063989C /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1B40C8288C4C470063989C /* NetworkManager.swift */; };
+		4B7567BB288C5807004E3FC4 /* PeopleListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7567B9288C5807004E3FC4 /* PeopleListViewController.swift */; };
+		4B7567BC288C5807004E3FC4 /* PeopleListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7567B9288C5807004E3FC4 /* PeopleListViewController.swift */; };
+		4B7567BD288C5807004E3FC4 /* PeopleListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B7567BA288C5807004E3FC4 /* PeopleListViewController.xib */; };
+		4B7567BE288C5807004E3FC4 /* PeopleListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B7567BA288C5807004E3FC4 /* PeopleListViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +86,10 @@
 		4B1B40B8288C03FC0063989C /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		4B1B40BB288C06820063989C /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		4B1B40C0288C18270063989C /* UIColorExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtensionTests.swift; sourceTree = "<group>"; };
+		4B1B40C5288C3A7F0063989C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		4B1B40C8288C4C470063989C /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		4B7567B9288C5807004E3FC4 /* PeopleListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleListViewController.swift; sourceTree = "<group>"; };
+		4B7567BA288C5807004E3FC4 /* PeopleListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PeopleListViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,16 +140,19 @@
 		4B1B406D288BF8800063989C /* Directory App */ = {
 			isa = PBXGroup;
 			children = (
+				4B1B40C7288C4BF20063989C /* Networking */,
 				4B1B40B7288C03550063989C /* Extensions */,
 				4B1B40A5288BF97A0063989C /* Navigation */,
 				4B1B409E288BF90C0063989C /* MVVM */,
 				4B1B40AC288BFADA0063989C /* 1. Main Menu */,
+				4B7567B8288C57D3004E3FC4 /* 2. People */,
 				4B1B406E288BF8800063989C /* AppDelegate.swift */,
 				4B1B4070288BF8800063989C /* SceneDelegate.swift */,
 				4B1B4072288BF8800063989C /* ViewController.swift */,
 				4B1B4077288BF8810063989C /* Assets.xcassets */,
 				4B1B4079288BF8810063989C /* LaunchScreen.storyboard */,
 				4B1B407C288BF8810063989C /* Info.plist */,
+				4B1B40C5288C3A7F0063989C /* Constants.swift */,
 			);
 			path = "Directory App";
 			sourceTree = "<group>";
@@ -214,6 +228,23 @@
 				4B1B40C0288C18270063989C /* UIColorExtensionTests.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		4B1B40C7288C4BF20063989C /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				4B1B40C8288C4C470063989C /* NetworkManager.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		4B7567B8288C57D3004E3FC4 /* 2. People */ = {
+			isa = PBXGroup;
+			children = (
+				4B7567B9288C5807004E3FC4 /* PeopleListViewController.swift */,
+				4B7567BA288C5807004E3FC4 /* PeopleListViewController.xib */,
+			);
+			path = "2. People";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -321,6 +352,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B1B40B1288BFB040063989C /* MainMenuViewController.xib in Resources */,
+				4B7567BD288C5807004E3FC4 /* PeopleListViewController.xib in Resources */,
 				4B1B407B288BF8810063989C /* LaunchScreen.storyboard in Resources */,
 				4B1B4078288BF8810063989C /* Assets.xcassets in Resources */,
 			);
@@ -331,6 +363,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B1B40B2288BFB040063989C /* MainMenuViewController.xib in Resources */,
+				4B7567BE288C5807004E3FC4 /* PeopleListViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,8 +390,11 @@
 				4B1B40A2288BF90D0063989C /* ViewModelProtocol.swift in Sources */,
 				4B1B40AF288BFB040063989C /* MainMenuViewController.swift in Sources */,
 				4B1B4073288BF8800063989C /* ViewController.swift in Sources */,
+				4B7567BB288C5807004E3FC4 /* PeopleListViewController.swift in Sources */,
 				4B1B40BC288C06820063989C /* UIViewExtension.swift in Sources */,
 				4B1B40B4288BFB2C0063989C /* MainMenuViewModel.swift in Sources */,
+				4B1B40C6288C3A7F0063989C /* Constants.swift in Sources */,
+				4B1B40C9288C4C470063989C /* NetworkManager.swift in Sources */,
 				4B1B406F288BF8800063989C /* AppDelegate.swift in Sources */,
 				4B1B4071288BF8800063989C /* SceneDelegate.swift in Sources */,
 			);
@@ -370,11 +406,13 @@
 			files = (
 				4B1B40C4288C1AEC0063989C /* ModelledViewController.swift in Sources */,
 				4B1B40BD288C06820063989C /* UIViewExtension.swift in Sources */,
+				4B1B40CA288C4C470063989C /* NetworkManager.swift in Sources */,
 				4B1B40C1288C18270063989C /* UIColorExtensionTests.swift in Sources */,
 				4B1B40B0288BFB040063989C /* MainMenuViewController.swift in Sources */,
 				4B1B40BA288C03FC0063989C /* UIColorExtension.swift in Sources */,
 				4B1B40C2288C1AE70063989C /* ViewModelProtocol.swift in Sources */,
 				4B1B4086288BF8810063989C /* Directory_AppTests.swift in Sources */,
+				4B7567BC288C5807004E3FC4 /* PeopleListViewController.swift in Sources */,
 				4B1B40C3288C1AEA0063989C /* ViewModel.swift in Sources */,
 				4B1B40B5288BFB2C0063989C /* MainMenuViewModel.swift in Sources */,
 			);
