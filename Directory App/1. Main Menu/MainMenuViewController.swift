@@ -7,16 +7,24 @@
 
 import UIKit
 
-let MainBrandColour = "#C40202"
-
 class MainMenuViewController: ModelledViewController<MainMenuViewModel> {
     @IBOutlet weak var backgroundView: UIView!
     @IBOutlet weak var titleLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.titleLabel.text = "Virgin Money"
-        self.titleLabel.textColor = UIColor(hexString: MainBrandColour)
-        self.backgroundView.addWaveBackground(hexColour: MainBrandColour)
+        self.setupUI()
+        self.navigationController?.pushViewController(PeopleListViewController(viewModel: PeopleListViewModel()), animated: true)
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        self.backgroundView.addWaveBackground(hexColour: Constants.MainBrandColour)
+    }
+    
+    private func setupUI() {
+        self.titleLabel.text = Constants.VirginMoneyTitle
+        self.titleLabel.textColor = UIColor(hexString: Constants.MainBrandColour)
+        self.titleLabel.font = UIFont(name: Constants.Font.VirginMoneyTitleFont, size: Constants.Font.VirginMoneyTitleFontSize)
     }
 }

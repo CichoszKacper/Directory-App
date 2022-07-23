@@ -1,8 +1,8 @@
 //
 //  ViewController.swift
-//  Directory App
+//  Directory App QA
 //
-//  Created by Kacper Cichosz on 23/07/2022.
+//  Created by Kacper Cichosz on 24/07/2022.
 //
 
 import UIKit
