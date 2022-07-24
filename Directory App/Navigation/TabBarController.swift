@@ -24,12 +24,11 @@ class TabBarController: UITabBarController {
         if #available(iOS 15, *) {
             let appearance = UITabBarAppearance()
             appearance.configureWithDefaultBackground()
-            appearance.stackedLayoutAppearance.normal.iconColor = .white
+            appearance.stackedLayoutAppearance.normal.iconColor = UIColor(hexString: Constants.MainBrandColour)
             appearance.stackedLayoutAppearance.normal.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
             
-            appearance.stackedLayoutAppearance.selected.iconColor = .white
+            appearance.stackedLayoutAppearance.selected.iconColor = UIColor(hexString: Constants.MainBrandColour)
             appearance.stackedLayoutAppearance.selected.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-            appearance.backgroundColor = UIColor(hexString: Constants.MainBrandColour)
             
             self.tabBar.standardAppearance = appearance
             self.tabBar.scrollEdgeAppearance = appearance
@@ -40,11 +39,10 @@ class TabBarController: UITabBarController {
             appearance.shadowImage = UIImage()
             appearance.shadowColor = .white
             
-            appearance.stackedLayoutAppearance.normal.iconColor = .white
+            appearance.stackedLayoutAppearance.normal.iconColor = UIColor(hexString: Constants.MainBrandColour)
             appearance.stackedLayoutAppearance.normal.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-            appearance.stackedLayoutAppearance.normal.badgeBackgroundColor = UIColor(hexString: Constants.MainBrandColour)
             
-            appearance.stackedLayoutAppearance.selected.iconColor = .systemPink
+            appearance.stackedLayoutAppearance.selected.iconColor = UIColor(hexString: Constants.MainBrandColour)
             appearance.stackedLayoutAppearance.selected.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
             
             self.tabBar.standardAppearance = appearance

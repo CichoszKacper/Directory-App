@@ -17,9 +17,9 @@ struct NetworkManager {
     
     public func downloadData <T: Decodable> (classType: T.Type,
                                              settingsKey: String,
-                                             substitution: String?,
+                                             substitution: String,
                                              completion: ((T?, [String: Any]?, Error?) -> Void)?) {
-        guard let url = URL(string: "\(settingsKey)\(String(describing: substitution ?? nil))") else {
+        guard let url = URL(string: settingsKey + substitution) else {
             return
         }
         
@@ -30,8 +30,7 @@ struct NetworkManager {
             }
             
             do {
-                let jsonData = try JSONSerialization.data(withJSONObject: data, options: .fragmentsAllowed)
-                let decodedData = try JSONDecoder().decode(classType.self, from: jsonData)
+                let decodedData = try JSONDecoder().decode(classType.self, from: data)
                 DispatchQueue.main.async {
                     completion?(decodedData, nil, error)
                 }
@@ -41,3 +40,4 @@ struct NetworkManager {
         }.resume()
     }
 }
+

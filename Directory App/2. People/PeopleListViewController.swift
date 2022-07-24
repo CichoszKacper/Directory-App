@@ -7,23 +7,32 @@
 
 import UIKit
 
-class PeopleListViewController: UIViewController {
+class PeopleListViewController: ModelledViewController<PeopleListViewModel> {
+    @IBOutlet weak var tableView: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.viewModel.downloadPeopleData()
+        self.tableView.register(UINib(nibName: "PeopleListTableViewCell", bundle: nil),
+                                forCellReuseIdentifier: "PeopleListTableViewCell")
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    override func updateView(_ type: PeopleListViewModel.UpdateType) {
+        switch type {
+        case .reload:
+            self.tableView.reloadOnMainThread()
+        }
     }
-    */
+}
 
+extension PeopleListViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.viewModel.peopleData?.count ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PeopleListTableViewCell", for: indexPath) as! PeopleListTableViewCell
+        cell.setupCell(person: self.viewModel.peopleData?[indexPath.row])
+        return cell
+    }
 }

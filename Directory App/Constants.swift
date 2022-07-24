@@ -20,6 +20,12 @@ struct Constants {
         static let VirginMoneyTitleFont = "HelveticaNeue"
         static let VirginMoneyTitleFontSize = 30.0
     }
+    struct People {
+        static let NameTitle = "Name:"
+        static let EmailTitle = "Email:"
+        static let JobTitleTitle = "Job Title:"
+        static let ImageCornerRadius = 15.0
+    }
     static let VirginMoneyTitle = "VIRGIN MONEY"
     static let MainBrandColour = "#C40202"
 }
