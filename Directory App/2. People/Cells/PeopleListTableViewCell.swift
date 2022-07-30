@@ -15,7 +15,6 @@ class PeopleListTableViewCell: UITableViewCell {
     @IBOutlet weak var emailTitleLabel: UILabel!
     @IBOutlet weak var jobTitleTitleLabel: UILabel!
     @IBOutlet weak var jobTitleLabel: UILabel!
-    @IBOutlet weak var profileImageBackgroundView: UIView!
     
     override func awakeFromNib() {
         self.setupUI()
@@ -36,18 +35,17 @@ class PeopleListTableViewCell: UITableViewCell {
             }
         }
         self.nameLabel.text = [person.firstName, person.lastName].joined(separator: " ")
-        self.emailLabel.text = person.email
+        self.emailLabel.text = person.email.lowercased()
         self.jobTitleLabel.text = person.jobtitle
     }
     
     func setupUI() {
-        self.profileImageBackgroundView.layer.cornerRadius = Constants.People.ImageCornerRadius
-        self.profileImageView.layer.cornerRadius = Constants.People.ImageCornerRadius
+        self.profileImageView.makeRounded(borderWidth: 3)
         self.firstNameTitleLabel.text = Constants.People.NameTitle
-        self.firstNameTitleLabel.textColor = UIColor(hexString: Constants.MainBrandColour)
+        self.firstNameTitleLabel.textColor = Constants.MainBrandColour
         self.emailTitleLabel.text = Constants.People.EmailTitle
-        self.emailTitleLabel.textColor = UIColor(hexString: Constants.MainBrandColour)
+        self.emailTitleLabel.textColor = Constants.MainBrandColour
         self.jobTitleTitleLabel.text = Constants.People.JobTitleTitle
-        self.jobTitleTitleLabel.textColor = UIColor(hexString: Constants.MainBrandColour)
+        self.jobTitleTitleLabel.textColor = Constants.MainBrandColour
     }
 }

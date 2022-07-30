@@ -17,9 +17,9 @@ private let RightInflexionX: CGFloat = 0.6 / WaveHeight
 private let RightInflexionY: CGFloat = 0.22 / WaveHeight
 
 extension UIView {
-    func addWaveBackground(hexColour: String){
+    func addWaveBackground(colour: UIColor){
         let backView = UIView(frame: self.frame)
-        backView.backgroundColor = UIColor(hexString: hexColour)
+        backView.backgroundColor = colour
         self.addSubview(backView)
         let backLayer = CAShapeLayer()
         let path = UIBezierPath()

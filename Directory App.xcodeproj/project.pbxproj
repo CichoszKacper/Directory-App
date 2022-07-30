@@ -36,6 +36,18 @@
 		4B1B40C6288C3A7F0063989C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1B40C5288C3A7F0063989C /* Constants.swift */; };
 		4B1B40C9288C4C470063989C /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1B40C8288C4C470063989C /* NetworkManager.swift */; };
 		4B1B40CA288C4C470063989C /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1B40C8288C4C470063989C /* NetworkManager.swift */; };
+		4B4F6A9E288EAB0A009FD129 /* PersonDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4F6A9C288EAB0A009FD129 /* PersonDetailsViewController.swift */; };
+		4B4F6A9F288EAB0A009FD129 /* PersonDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4F6A9C288EAB0A009FD129 /* PersonDetailsViewController.swift */; };
+		4B4F6AA0288EAB0A009FD129 /* PersonDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4F6A9C288EAB0A009FD129 /* PersonDetailsViewController.swift */; };
+		4B4F6AA1288EAB0A009FD129 /* PersonDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4F6A9C288EAB0A009FD129 /* PersonDetailsViewController.swift */; };
+		4B4F6AA2288EAB0A009FD129 /* PersonDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B4F6A9D288EAB0A009FD129 /* PersonDetailsViewController.xib */; };
+		4B4F6AA3288EAB0A009FD129 /* PersonDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B4F6A9D288EAB0A009FD129 /* PersonDetailsViewController.xib */; };
+		4B4F6AA4288EAB0A009FD129 /* PersonDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B4F6A9D288EAB0A009FD129 /* PersonDetailsViewController.xib */; };
+		4B4F6AA5288EAB0A009FD129 /* PersonDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B4F6A9D288EAB0A009FD129 /* PersonDetailsViewController.xib */; };
+		4B4F6AA7288EAB26009FD129 /* PersonDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4F6AA6288EAB26009FD129 /* PersonDetailsViewModel.swift */; };
+		4B4F6AA8288EAB26009FD129 /* PersonDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4F6AA6288EAB26009FD129 /* PersonDetailsViewModel.swift */; };
+		4B4F6AA9288EAB26009FD129 /* PersonDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4F6AA6288EAB26009FD129 /* PersonDetailsViewModel.swift */; };
+		4B4F6AAA288EAB26009FD129 /* PersonDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4F6AA6288EAB26009FD129 /* PersonDetailsViewModel.swift */; };
 		4B7567BB288C5807004E3FC4 /* PeopleListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7567B9288C5807004E3FC4 /* PeopleListViewController.swift */; };
 		4B7567BC288C5807004E3FC4 /* PeopleListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7567B9288C5807004E3FC4 /* PeopleListViewController.swift */; };
 		4B7567BD288C5807004E3FC4 /* PeopleListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B7567BA288C5807004E3FC4 /* PeopleListViewController.xib */; };
@@ -125,6 +137,9 @@
 		4B1B40C0288C18270063989C /* UIColorExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtensionTests.swift; sourceTree = "<group>"; };
 		4B1B40C5288C3A7F0063989C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		4B1B40C8288C4C470063989C /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		4B4F6A9C288EAB0A009FD129 /* PersonDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDetailsViewController.swift; sourceTree = "<group>"; };
+		4B4F6A9D288EAB0A009FD129 /* PersonDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonDetailsViewController.xib; sourceTree = "<group>"; };
+		4B4F6AA6288EAB26009FD129 /* PersonDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDetailsViewModel.swift; sourceTree = "<group>"; };
 		4B7567B9288C5807004E3FC4 /* PeopleListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleListViewController.swift; sourceTree = "<group>"; };
 		4B7567BA288C5807004E3FC4 /* PeopleListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PeopleListViewController.xib; sourceTree = "<group>"; };
 		4B7567BF288C59EA004E3FC4 /* PeopleListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleListViewModel.swift; sourceTree = "<group>"; };
@@ -322,9 +337,20 @@
 			path = Networking;
 			sourceTree = "<group>";
 		};
+		4B4F6A9B288EAADB009FD129 /* 2.1. Person Details */ = {
+			isa = PBXGroup;
+			children = (
+				4B4F6A9C288EAB0A009FD129 /* PersonDetailsViewController.swift */,
+				4B4F6A9D288EAB0A009FD129 /* PersonDetailsViewController.xib */,
+				4B4F6AA6288EAB26009FD129 /* PersonDetailsViewModel.swift */,
+			);
+			path = "2.1. Person Details";
+			sourceTree = "<group>";
+		};
 		4B7567B8288C57D3004E3FC4 /* 2. People */ = {
 			isa = PBXGroup;
 			children = (
+				4B4F6A9B288EAADB009FD129 /* 2.1. Person Details */,
 				4B7567C9288C76FB004E3FC4 /* Cells */,
 				4B7567B9288C5807004E3FC4 /* PeopleListViewController.swift */,
 				4B7567BA288C5807004E3FC4 /* PeopleListViewController.xib */,
@@ -554,6 +580,7 @@
 			files = (
 				4B1B40B1288BFB040063989C /* MainMenuViewController.xib in Resources */,
 				4B7567BD288C5807004E3FC4 /* PeopleListViewController.xib in Resources */,
+				4B4F6AA2288EAB0A009FD129 /* PersonDetailsViewController.xib in Resources */,
 				4B7567CE288C7712004E3FC4 /* PeopleListTableViewCell.xib in Resources */,
 				4B1B407B288BF8810063989C /* LaunchScreen.storyboard in Resources */,
 				4B1B4078288BF8810063989C /* Assets.xcassets in Resources */,
@@ -564,6 +591,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B4F6AA3288EAB0A009FD129 /* PersonDetailsViewController.xib in Resources */,
 				4B7567CF288C7712004E3FC4 /* PeopleListTableViewCell.xib in Resources */,
 				4B1B40B2288BFB040063989C /* MainMenuViewController.xib in Resources */,
 				4B7567BE288C5807004E3FC4 /* PeopleListViewController.xib in Resources */,
@@ -581,6 +609,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B4F6AA4288EAB0A009FD129 /* PersonDetailsViewController.xib in Resources */,
 				4B7567EC288DD50A004E3FC4 /* LaunchScreen.storyboard in Resources */,
 				4B7567E9288DD50A004E3FC4 /* Assets.xcassets in Resources */,
 				4B7567E7288DD508004E3FC4 /* Main.storyboard in Resources */,
@@ -591,6 +620,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B4F6AA5288EAB0A009FD129 /* PersonDetailsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -608,6 +638,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B4F6A9E288EAB0A009FD129 /* PersonDetailsViewController.swift in Sources */,
 				4B7567C4288C5BEA004E3FC4 /* PeopleDataModel.swift in Sources */,
 				4B1B40A4288BF90D0063989C /* ModelledViewController.swift in Sources */,
 				4B1B40B9288C03FC0063989C /* UIColorExtension.swift in Sources */,
@@ -616,6 +647,7 @@
 				4B7567CC288C7712004E3FC4 /* PeopleListTableViewCell.swift in Sources */,
 				4B1B40AB288BF97A0063989C /* TabBarController.swift in Sources */,
 				4B7567D4288DA151004E3FC4 /* UIImageViewExtension.swift in Sources */,
+				4B4F6AA7288EAB26009FD129 /* PersonDetailsViewModel.swift in Sources */,
 				4B1B40A2288BF90D0063989C /* ViewModelProtocol.swift in Sources */,
 				4B1B40AF288BFB040063989C /* MainMenuViewController.swift in Sources */,
 				4B7567D1288D9AC0004E3FC4 /* UITableViewExtension.swift in Sources */,
@@ -648,9 +680,11 @@
 				4B1B4086288BF8810063989C /* Directory_AppTests.swift in Sources */,
 				4B756811288DD528004E3FC4 /* NavigationController.swift in Sources */,
 				4B7567BC288C5807004E3FC4 /* PeopleListViewController.swift in Sources */,
+				4B4F6A9F288EAB0A009FD129 /* PersonDetailsViewController.swift in Sources */,
 				4B1B40C3288C1AEA0063989C /* ViewModel.swift in Sources */,
 				4B7567D5288DA151004E3FC4 /* UIImageViewExtension.swift in Sources */,
 				4B1B40B5288BFB2C0063989C /* MainMenuViewModel.swift in Sources */,
+				4B4F6AA8288EAB26009FD129 /* PersonDetailsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -667,12 +701,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B4F6AA9288EAB26009FD129 /* PersonDetailsViewModel.swift in Sources */,
 				4B75680D288DD51A004E3FC4 /* MainMenuViewController.swift in Sources */,
 				4B7567E4288DD508004E3FC4 /* ViewController.swift in Sources */,
 				4B75680F288DD520004E3FC4 /* NavigationController.swift in Sources */,
 				4B756812288DD52D004E3FC4 /* TabBarController.swift in Sources */,
 				4B7567E0288DD508004E3FC4 /* AppDelegate.swift in Sources */,
 				4B7567E2288DD508004E3FC4 /* SceneDelegate.swift in Sources */,
+				4B4F6AA0288EAB0A009FD129 /* PersonDetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -680,8 +716,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B4F6AA1288EAB0A009FD129 /* PersonDetailsViewController.swift in Sources */,
 				4B75680E288DD51C004E3FC4 /* MainMenuViewController.swift in Sources */,
 				4B756810288DD521004E3FC4 /* NavigationController.swift in Sources */,
+				4B4F6AAA288EAB26009FD129 /* PersonDetailsViewModel.swift in Sources */,
 				4B7567F7288DD50A004E3FC4 /* Directory_App_QATests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

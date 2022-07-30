@@ -13,7 +13,7 @@ class PeopleListViewModel: ViewModel, ViewModelProtocol {
             self.update?(.reload)
         }
     }
-    
+
     var update: ((PeopleListViewModel.UpdateType) -> Void)?
     enum UpdateType {
         case reload

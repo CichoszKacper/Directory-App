@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 enum APIEndpoints: String {
     case people
@@ -25,7 +26,9 @@ struct Constants {
         static let EmailTitle = "Email:"
         static let JobTitleTitle = "Job Title:"
         static let ImageCornerRadius = 15.0
+        static let AccountAddedString = "Account added: "
+        
     }
     static let VirginMoneyTitle = "VIRGIN MONEY"
-    static let MainBrandColour = "#C40202"
+    static let MainBrandColour = UIColor(hexString: "#C40202")
 }
