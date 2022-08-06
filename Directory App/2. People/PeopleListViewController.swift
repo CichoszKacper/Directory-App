@@ -39,8 +39,8 @@ extension PeopleListViewController: UITableViewDataSource {
 
 extension PeopleListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let person = self.viewModel.peopleData?[indexPath.row] {
-            self.navigationController?.pushViewController(PersonDetailsViewController(viewModel: PersonDetailsViewModel(person: person)),
+        if let people = self.viewModel.peopleData {
+            self.navigationController?.pushViewController(PersonDetailsViewController(viewModel: PersonDetailsViewModel(person: people[indexPath.row], people: people)),
                                                           animated: true)
         }
     }

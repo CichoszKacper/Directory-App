@@ -11,12 +11,17 @@ import UIKit
 
 class PersonDetailsViewModel: ViewModel, ViewModelProtocol {
     var person: PeopleDataModel
+    var people: [PeopleDataModel]
+    var filteredPeople: [PeopleDataModel]?
     
-    init (person: PeopleDataModel) {
+    init (person: PeopleDataModel, people: [PeopleDataModel]) {
         self.person = person
+        self.people = people
     }
     var update: ((PersonDetailsViewModel.UpdateType) -> Void)?
     enum UpdateType {
+        case personDetails
+        case searchPeople
     }
     var error: ((PersonDetailsViewModel.ErrorType) -> Void)?
     enum ErrorType {

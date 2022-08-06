@@ -26,6 +26,8 @@ struct Constants {
         static let EmailTitle = "Email:"
         static let JobTitleTitle = "Job Title:"
         static let ImageCornerRadius = 15.0
+        static let ImageBorderWidth = 5.0
+        static let DetailsViewCornerRadius = 15.0
         static let AccountAddedString = "Account added: "
         
     }
