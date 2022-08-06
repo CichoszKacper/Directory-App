@@ -12,7 +12,6 @@ class MainMenuViewModel: ViewModel, ViewModelProtocol {
     }
     var error: ((MainMenuViewModel.ErrorType) -> Void)?
     enum ErrorType {
-        
     }
     
 }
