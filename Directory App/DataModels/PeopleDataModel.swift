@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 // MARK: - PeopleDataModel
 struct PeopleDataModel: Codable, Equatable {
@@ -19,6 +20,12 @@ struct PeopleDataModel: Codable, Equatable {
     let id: String
     let data: DataClass?
     let to, fromName: String?
+    var image: UIImage { if let url = URL(string: avatar),
+                            let data = try? Data(contentsOf: url), let image = UIImage(data: data) {
+        return image
+    }
+        return Constants.People.imagePlaceholder
+    }
 }
 
 // MARK: - DataClass

@@ -1,15 +1,24 @@
 //
-//  PeopleListViewController.swift
+//  PersonDetailsViewController.swift
 //  Directory App
 //
-//  Created by Kacper Cichosz on 23/07/2022.
+//  Created by Kacper Cichosz on 25/07/2022.
 //
 
 import UIKit
 
-class PeopleListViewController: ModelledViewController<PeopleListViewModel> {
-    @IBOutlet weak var tableView: UITableView!
-
+class PersonDetailsViewController: ModelledViewController<PersonDetailsViewModel> {
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var detailsBackgroundView: UIView!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var emailLabel: UILabel!
+    @IBOutlet weak var jobTitleLabel: UILabel!
+    @IBOutlet weak var colourLabel: UILabel!
+    @IBOutlet weak var accountDateLabel: UILabel!
+    @IBOutlet var detailsTitleLabels: [UILabel]!
+    @IBOutlet var detailsViews: [UIView]!
+    @IBOutlet weak var searchTableView: UITableView!
+    
     var searchBar = UISearchBar()
     var searchBarContainer: SearchBarContainerView?
     var searchBarButtonItem: UIBarButtonItem?
@@ -21,18 +30,41 @@ class PeopleListViewController: ModelledViewController<PeopleListViewModel> {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.viewModel.downloadPeopleData()
+        self.setupUI()
         self.setUpSearchBar()
-        self.title = Constants.PeopleTitle
-        self.tableView.register(UINib(nibName: "PeopleListTableViewCell", bundle: nil),
+        self.searchTableView.register(UINib(nibName: "PeopleListTableViewCell", bundle: nil),
                                 forCellReuseIdentifier: "PeopleListTableViewCell")
     }
     
-    override func updateView(_ type: PeopleListViewModel.UpdateType) {
+    override func updateView(_ type: PersonDetailsViewModel.UpdateType) {
         switch type {
-        case .reload:
-            self.tableView.reloadOnMainThread()
+        case .personDetails:
+            self.searchTableView.isHidden = true
+            self.detailsBackgroundView.isHidden = false
+            self.imageView.isHidden = false
+        case .searchPeople:
+            self.searchTableView.isHidden = false
+            self.detailsBackgroundView.isHidden = true
+            self.imageView.isHidden = true
+            self.searchTableView.reloadOnMainThread()
         }
+    }
+    
+    private func setupUI() {
+        for label in self.detailsTitleLabels {
+            label.textColor = Constants.MainBrandColour
+        }
+        for view in self.detailsViews {
+            view.layer.cornerRadius = Constants.People.DetailsViewCornerRadius
+        }
+        self.detailsBackgroundView.backgroundColor = Constants.MainBrandColour
+        self.imageView.makeRounded(borderWidth: Constants.People.ImageBorderWidth)
+        self.imageView.image = self.viewModel.person.image
+        self.nameLabel.text = [self.viewModel.person.firstName, self.viewModel.person.lastName].joined(separator: " ")
+        self.emailLabel.text = self.viewModel.person.email.lowercased()
+        self.jobTitleLabel.text = self.viewModel.person.jobtitle
+        self.colourLabel.text = self.viewModel.person.favouriteColor.capitalized
+        self.accountDateLabel.text = self.viewModel.getDate()
     }
     
     @objc func seachBarIconTapped() {
@@ -76,13 +108,14 @@ class PeopleListViewController: ModelledViewController<PeopleListViewModel> {
         self.searchBarContainer?.searchBar.text = nil
         self.navigationItem.setRightBarButton(searchBarButtonItem, animated: true)
         self.navigationItem.titleView = .none
-        self.viewModel.update?(.reload)
+        self.viewModel.update?(.personDetails)
     }
 }
 
-extension PeopleListViewController: UITableViewDataSource {
+// MARK: - UITableViewDataSource
+extension PersonDetailsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.viewModel.filteredPeople?.count ?? 0
+        self.viewModel.filteredPeople?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -92,37 +125,38 @@ extension PeopleListViewController: UITableViewDataSource {
     }
 }
 
-extension PeopleListViewController: UITableViewDelegate {
+// MARK: - UITableViewDelegate
+extension PersonDetailsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let filteredPeople = self.viewModel.filteredPeople,
-           let people = self.viewModel.peopleData {
-            self.navigationController?.pushViewController(PersonDetailsViewController(viewModel: PersonDetailsViewModel(person: filteredPeople[indexPath.row],
-                                                                                                                        people: people)),
+        if let filteredPeople = self.viewModel.filteredPeople {
+            self.navigationController?.pushViewController(PersonDetailsViewController(
+                viewModel: PersonDetailsViewModel(person: filteredPeople[indexPath.row],
+                                                  people: self.viewModel.people)),
                                                           animated: true)
         }
     }
 }
 
 // MARK: - UISearchBarDelegate
-extension PeopleListViewController: UISearchBarDelegate {
+extension PersonDetailsViewController: UISearchBarDelegate {
     
     // Extension to SearchBar to search through the list of people
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         guard !searchText.isEmpty else {
-            self.viewModel.filteredPeople = self.viewModel.peopleData
+            self.viewModel.people = self.viewModel.people
             searchBar.resignFirstResponder()
             self.hideSearchBar()
             return
         }
         
-        self.viewModel.filteredPeople = self.viewModel.peopleData?.filter({ (person) -> Bool in
+        self.viewModel.filteredPeople = self.viewModel.people.filter({ (person) -> Bool in
             let firstNameMatch = person.firstName.range(of: searchText, options: NSString.CompareOptions.caseInsensitive)
             let lastNameMatch = person.lastName.range(of: searchText, options: NSString.CompareOptions.caseInsensitive)
             let jobTitleMatch = person.jobtitle.range(of: searchText, options: NSString.CompareOptions.caseInsensitive)
             let emailMatch = person.email.range(of: searchText, options: NSString.CompareOptions.caseInsensitive)
             return firstNameMatch != nil || lastNameMatch != nil || jobTitleMatch != nil || emailMatch != nil}
         )
-        self.viewModel.update?(.reload)
+        self.viewModel.update?(.searchPeople)
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {

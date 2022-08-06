@@ -15,8 +15,10 @@ class TabBarController: UITabBarController {
     }
     
     func setUpTabBarController() {
-        let mainMenu = NavigationController(rootViewController: MainMenuViewController(viewModel: MainMenuViewModel()))
-        self.setViewControllers([mainMenu], animated: true)
+        let mainMenu = NavigationController(rootViewController: MainMenuViewController())
+        let peopleView = NavigationController(rootViewController: PeopleListViewController(viewModel: PeopleListViewModel()))
+        let roomsView = NavigationController(rootViewController: RoomListViewController(viewModel: RoomListViewModel()))
+        self.setViewControllers([mainMenu, peopleView, roomsView], animated: true)
         guard let items = self.tabBar.items else {
             return
         }
@@ -24,10 +26,10 @@ class TabBarController: UITabBarController {
         if #available(iOS 15, *) {
             let appearance = UITabBarAppearance()
             appearance.configureWithDefaultBackground()
-            appearance.stackedLayoutAppearance.normal.iconColor = UIColor(hexString: Constants.MainBrandColour)
+            appearance.stackedLayoutAppearance.normal.iconColor = Constants.MainBrandColour
             appearance.stackedLayoutAppearance.normal.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
             
-            appearance.stackedLayoutAppearance.selected.iconColor = UIColor(hexString: Constants.MainBrandColour)
+            appearance.stackedLayoutAppearance.selected.iconColor = Constants.MainBrandColour
             appearance.stackedLayoutAppearance.selected.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
             
             self.tabBar.standardAppearance = appearance
@@ -39,17 +41,17 @@ class TabBarController: UITabBarController {
             appearance.shadowImage = UIImage()
             appearance.shadowColor = .white
             
-            appearance.stackedLayoutAppearance.normal.iconColor = UIColor(hexString: Constants.MainBrandColour)
+            appearance.stackedLayoutAppearance.normal.iconColor = Constants.MainBrandColour
             appearance.stackedLayoutAppearance.normal.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
             
-            appearance.stackedLayoutAppearance.selected.iconColor = UIColor(hexString: Constants.MainBrandColour)
+            appearance.stackedLayoutAppearance.selected.iconColor = Constants.MainBrandColour
             appearance.stackedLayoutAppearance.selected.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
             
             self.tabBar.standardAppearance = appearance
         }
-        let images = ["house", "gear"]
+        let images = ["house", "person", "person.3.sequence"]
         for (index, item) in items.enumerated() {
-            item.image = UIImage(systemName: images[index])
+            item.image = UIImage(named: images[index])
         }
     }
     
