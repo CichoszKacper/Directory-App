@@ -11,28 +11,20 @@ import UIKit
 
 class PersonDetailsViewModel: ViewModel, ViewModelProtocol {
     var person: PeopleDataModel
+    var people: [PeopleDataModel]
+    var filteredPeople: [PeopleDataModel]?
     
-    init (person: PeopleDataModel) {
+    init (person: PeopleDataModel, people: [PeopleDataModel]) {
         self.person = person
+        self.people = people
     }
     var update: ((PersonDetailsViewModel.UpdateType) -> Void)?
     enum UpdateType {
+        case personDetails
+        case searchPeople
     }
     var error: ((PersonDetailsViewModel.ErrorType) -> Void)?
     enum ErrorType {
-    }
-    
-    func profileImage(imageView: UIImageView) {
-        if let url = URL(string: person.avatar) {
-            imageView.set(url: url) { result in
-                switch result {
-                case .failure(_):
-                    imageView.image = UIImage(named: "imageProfilePlaceholder")
-                case .success(let image):
-                    imageView.image = image
-                }
-            }
-        }
     }
     
     func getDate() -> String {

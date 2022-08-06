@@ -21,19 +21,11 @@ class PeopleListTableViewCell: UITableViewCell {
     }
     
     func setupCell(person: PeopleDataModel?) {
-        guard let person = person,
-              let imageURL = URL(string: person.avatar) else {
+        guard let person = person else {
                   return
               }
         
-        self.profileImageView.set(url: imageURL) { result in
-            switch result {
-            case .failure(_):
-                self.profileImageView.image = UIImage(named: "imageProfilePlaceholder")
-            case .success(let image):
-                self.profileImageView.image = image
-            }
-        }
+        self.profileImageView.image = person.image
         self.nameLabel.text = [person.firstName, person.lastName].joined(separator: " ")
         self.emailLabel.text = person.email.lowercased()
         self.jobTitleLabel.text = person.jobtitle

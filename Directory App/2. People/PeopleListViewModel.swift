@@ -13,6 +13,7 @@ class PeopleListViewModel: ViewModel, ViewModelProtocol {
             self.update?(.reload)
         }
     }
+    var filteredPeople: [PeopleDataModel]?
 
     var update: ((PeopleListViewModel.UpdateType) -> Void)?
     enum UpdateType {
@@ -29,7 +30,8 @@ class PeopleListViewModel: ViewModel, ViewModelProtocol {
             guard error == nil else {
                 return
             }
-
+            
+            self?.filteredPeople = peopleData
             self?.peopleData = peopleData
         }
     }
