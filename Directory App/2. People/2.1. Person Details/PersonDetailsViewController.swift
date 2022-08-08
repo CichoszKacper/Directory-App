@@ -77,7 +77,7 @@ class PersonDetailsViewController: ModelledViewController<PersonDetailsViewModel
         self.searchBar.showsCancelButton = true
         self.searchBarContainer = SearchBarContainerView(customSearchBar: self.searchBar)
         self.searchBarContainer?.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: 44)
-        self.searchBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "magnifyingglass"),
+        self.searchBarButtonItem = UIBarButtonItem(image: UIImage(named: "magnifyingglass"),
                                                    style: .plain,
                                                    target: self,
                                                    action: #selector(seachBarIconTapped))

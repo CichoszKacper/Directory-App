@@ -23,6 +23,7 @@ class PeopleListViewController: ModelledViewController<PeopleListViewModel> {
         super.viewDidLoad()
         self.viewModel.downloadPeopleData()
         self.setUpSearchBar()
+        self.title = Constants.PeopleTitle
         self.tableView.register(UINib(nibName: "PeopleListTableViewCell", bundle: nil),
                                 forCellReuseIdentifier: "PeopleListTableViewCell")
     }
@@ -44,7 +45,7 @@ class PeopleListViewController: ModelledViewController<PeopleListViewModel> {
         self.searchBar.showsCancelButton = true
         self.searchBarContainer = SearchBarContainerView(customSearchBar: self.searchBar)
         self.searchBarContainer?.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: 44)
-        self.searchBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "magnifyingglass"),
+        self.searchBarButtonItem = UIBarButtonItem(image: UIImage(named: "magnifyingglass"),
                                                    style: .plain,
                                                    target: self,
                                                    action: #selector(seachBarIconTapped))

@@ -23,8 +23,6 @@
 		4B1B40B0288BFB040063989C /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1B40AD288BFB040063989C /* MainMenuViewController.swift */; };
 		4B1B40B1288BFB040063989C /* MainMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B1B40AE288BFB040063989C /* MainMenuViewController.xib */; };
 		4B1B40B2288BFB040063989C /* MainMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B1B40AE288BFB040063989C /* MainMenuViewController.xib */; };
-		4B1B40B4288BFB2C0063989C /* MainMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1B40B3288BFB2C0063989C /* MainMenuViewModel.swift */; };
-		4B1B40B5288BFB2C0063989C /* MainMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1B40B3288BFB2C0063989C /* MainMenuViewModel.swift */; };
 		4B1B40B9288C03FC0063989C /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1B40B8288C03FC0063989C /* UIColorExtension.swift */; };
 		4B1B40BA288C03FC0063989C /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1B40B8288C03FC0063989C /* UIColorExtension.swift */; };
 		4B1B40BC288C06820063989C /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1B40BB288C06820063989C /* UIViewExtension.swift */; };
@@ -80,6 +78,17 @@
 		4B756811288DD528004E3FC4 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1B40A7288BF97A0063989C /* NavigationController.swift */; };
 		4B756812288DD52D004E3FC4 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1B40A8288BF97A0063989C /* TabBarController.swift */; };
 		4B7BC11E289E8236001A3CB1 /* SearchBarContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7BC11D289E8236001A3CB1 /* SearchBarContainerView.swift */; };
+		4B7BC125289EBD96001A3CB1 /* RoomListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7BC123289EBD96001A3CB1 /* RoomListViewController.swift */; };
+		4B7BC126289EBD96001A3CB1 /* RoomListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B7BC124289EBD96001A3CB1 /* RoomListViewController.xib */; };
+		4B7BC128289EBDF1001A3CB1 /* RoomListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7BC127289EBDF1001A3CB1 /* RoomListViewModel.swift */; };
+		4B7BC129289EBDF1001A3CB1 /* RoomListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7BC127289EBDF1001A3CB1 /* RoomListViewModel.swift */; };
+		4B7BC12B289EBEB1001A3CB1 /* RoomsDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7BC12A289EBEB1001A3CB1 /* RoomsDataModel.swift */; };
+		4B7BC12C289EBEB1001A3CB1 /* RoomsDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7BC12A289EBEB1001A3CB1 /* RoomsDataModel.swift */; };
+		4B7BC12F289EC287001A3CB1 /* RoomListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7BC12D289EC287001A3CB1 /* RoomListTableViewCell.swift */; };
+		4B7BC130289EC287001A3CB1 /* RoomListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7BC12D289EC287001A3CB1 /* RoomListTableViewCell.swift */; };
+		4B7BC131289EC287001A3CB1 /* RoomListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B7BC12E289EC287001A3CB1 /* RoomListTableViewCell.xib */; };
+		4B7BC132289EC287001A3CB1 /* RoomListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B7BC12E289EC287001A3CB1 /* RoomListTableViewCell.xib */; };
+		4B7BC13528A13133001A3CB1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B1B4077288BF8810063989C /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -132,7 +141,6 @@
 		4B1B40A8288BF97A0063989C /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		4B1B40AD288BFB040063989C /* MainMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
 		4B1B40AE288BFB040063989C /* MainMenuViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainMenuViewController.xib; sourceTree = "<group>"; };
-		4B1B40B3288BFB2C0063989C /* MainMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewModel.swift; sourceTree = "<group>"; };
 		4B1B40B8288C03FC0063989C /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		4B1B40BB288C06820063989C /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		4B1B40C0288C18270063989C /* UIColorExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtensionTests.swift; sourceTree = "<group>"; };
@@ -163,6 +171,12 @@
 		4B756800288DD50B004E3FC4 /* Directory_App_QAUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Directory_App_QAUITests.swift; sourceTree = "<group>"; };
 		4B756802288DD50B004E3FC4 /* Directory_App_QAUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Directory_App_QAUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		4B7BC11D289E8236001A3CB1 /* SearchBarContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarContainerView.swift; sourceTree = "<group>"; };
+		4B7BC123289EBD96001A3CB1 /* RoomListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomListViewController.swift; sourceTree = "<group>"; };
+		4B7BC124289EBD96001A3CB1 /* RoomListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RoomListViewController.xib; sourceTree = "<group>"; };
+		4B7BC127289EBDF1001A3CB1 /* RoomListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomListViewModel.swift; sourceTree = "<group>"; };
+		4B7BC12A289EBEB1001A3CB1 /* RoomsDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomsDataModel.swift; sourceTree = "<group>"; };
+		4B7BC12D289EC287001A3CB1 /* RoomListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomListTableViewCell.swift; sourceTree = "<group>"; };
+		4B7BC12E289EC287001A3CB1 /* RoomListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RoomListTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -240,6 +254,7 @@
 		4B1B406D288BF8800063989C /* Directory App */ = {
 			isa = PBXGroup;
 			children = (
+				4B1B40C5288C3A7F0063989C /* Constants.swift */,
 				4B7567C2288C5BD4004E3FC4 /* DataModels */,
 				4B1B40C7288C4BF20063989C /* Networking */,
 				4B1B40B7288C03550063989C /* Extensions */,
@@ -247,12 +262,12 @@
 				4B1B409E288BF90C0063989C /* MVVM */,
 				4B1B40AC288BFADA0063989C /* 1. Main Menu */,
 				4B7567B8288C57D3004E3FC4 /* 2. People */,
+				4B7BC122289EBD7C001A3CB1 /* 3. Rooms */,
 				4B1B406E288BF8800063989C /* AppDelegate.swift */,
 				4B1B4070288BF8800063989C /* SceneDelegate.swift */,
 				4B1B4077288BF8810063989C /* Assets.xcassets */,
 				4B1B4079288BF8810063989C /* LaunchScreen.storyboard */,
 				4B1B407C288BF8810063989C /* Info.plist */,
-				4B1B40C5288C3A7F0063989C /* Constants.swift */,
 			);
 			path = "Directory App";
 			sourceTree = "<group>";
@@ -300,7 +315,6 @@
 			children = (
 				4B1B40AD288BFB040063989C /* MainMenuViewController.swift */,
 				4B1B40AE288BFB040063989C /* MainMenuViewController.xib */,
-				4B1B40B3288BFB2C0063989C /* MainMenuViewModel.swift */,
 			);
 			path = "1. Main Menu";
 			sourceTree = "<group>";
@@ -366,6 +380,7 @@
 			isa = PBXGroup;
 			children = (
 				4B7567C3288C5BEA004E3FC4 /* PeopleDataModel.swift */,
+				4B7BC12A289EBEB1001A3CB1 /* RoomsDataModel.swift */,
 			);
 			path = DataModels;
 			sourceTree = "<group>";
@@ -416,6 +431,26 @@
 				4B7BC11D289E8236001A3CB1 /* SearchBarContainerView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		4B7BC122289EBD7C001A3CB1 /* 3. Rooms */ = {
+			isa = PBXGroup;
+			children = (
+				4B7BC133289EE2F5001A3CB1 /* Cells */,
+				4B7BC123289EBD96001A3CB1 /* RoomListViewController.swift */,
+				4B7BC124289EBD96001A3CB1 /* RoomListViewController.xib */,
+				4B7BC127289EBDF1001A3CB1 /* RoomListViewModel.swift */,
+			);
+			path = "3. Rooms";
+			sourceTree = "<group>";
+		};
+		4B7BC133289EE2F5001A3CB1 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				4B7BC12D289EC287001A3CB1 /* RoomListTableViewCell.swift */,
+				4B7BC12E289EC287001A3CB1 /* RoomListTableViewCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -593,7 +628,9 @@
 				4B7567BD288C5807004E3FC4 /* PeopleListViewController.xib in Resources */,
 				4B4F6AA2288EAB0A009FD129 /* PersonDetailsViewController.xib in Resources */,
 				4B7567CE288C7712004E3FC4 /* PeopleListTableViewCell.xib in Resources */,
+				4B7BC126289EBD96001A3CB1 /* RoomListViewController.xib in Resources */,
 				4B1B407B288BF8810063989C /* LaunchScreen.storyboard in Resources */,
+				4B7BC131289EC287001A3CB1 /* RoomListTableViewCell.xib in Resources */,
 				4B1B4078288BF8810063989C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -621,8 +658,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B4F6AA4288EAB0A009FD129 /* PersonDetailsViewController.xib in Resources */,
+				4B7BC132289EC287001A3CB1 /* RoomListTableViewCell.xib in Resources */,
 				4B7567EC288DD50A004E3FC4 /* LaunchScreen.storyboard in Resources */,
 				4B7567E9288DD50A004E3FC4 /* Assets.xcassets in Resources */,
+				4B7BC13528A13133001A3CB1 /* Assets.xcassets in Resources */,
 				4B7567E7288DD508004E3FC4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -656,8 +695,11 @@
 				4B1B40AA288BF97A0063989C /* NavigationController.swift in Sources */,
 				4B1B40A3288BF90D0063989C /* ViewModel.swift in Sources */,
 				4B7567CC288C7712004E3FC4 /* PeopleListTableViewCell.swift in Sources */,
+				4B7BC128289EBDF1001A3CB1 /* RoomListViewModel.swift in Sources */,
+				4B7BC12F289EC287001A3CB1 /* RoomListTableViewCell.swift in Sources */,
 				4B1B40AB288BF97A0063989C /* TabBarController.swift in Sources */,
 				4B7BC11E289E8236001A3CB1 /* SearchBarContainerView.swift in Sources */,
+				4B7BC12B289EBEB1001A3CB1 /* RoomsDataModel.swift in Sources */,
 				4B7567D4288DA151004E3FC4 /* UIImageViewExtension.swift in Sources */,
 				4B4F6AA7288EAB26009FD129 /* PersonDetailsViewModel.swift in Sources */,
 				4B1B40A2288BF90D0063989C /* ViewModelProtocol.swift in Sources */,
@@ -665,9 +707,9 @@
 				4B7567D1288D9AC0004E3FC4 /* UITableViewExtension.swift in Sources */,
 				4B7567BB288C5807004E3FC4 /* PeopleListViewController.swift in Sources */,
 				4B1B40BC288C06820063989C /* UIViewExtension.swift in Sources */,
-				4B1B40B4288BFB2C0063989C /* MainMenuViewModel.swift in Sources */,
 				4B1B40C6288C3A7F0063989C /* Constants.swift in Sources */,
 				4B1B40C9288C4C470063989C /* NetworkManager.swift in Sources */,
+				4B7BC125289EBD96001A3CB1 /* RoomListViewController.swift in Sources */,
 				4B7567C0288C59EA004E3FC4 /* PeopleListViewModel.swift in Sources */,
 				4B1B406F288BF8800063989C /* AppDelegate.swift in Sources */,
 				4B1B4071288BF8800063989C /* SceneDelegate.swift in Sources */,
@@ -695,7 +737,6 @@
 				4B4F6A9F288EAB0A009FD129 /* PersonDetailsViewController.swift in Sources */,
 				4B1B40C3288C1AEA0063989C /* ViewModel.swift in Sources */,
 				4B7567D5288DA151004E3FC4 /* UIImageViewExtension.swift in Sources */,
-				4B1B40B5288BFB2C0063989C /* MainMenuViewModel.swift in Sources */,
 				4B4F6AA8288EAB26009FD129 /* PersonDetailsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -713,12 +754,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B7BC12C289EBEB1001A3CB1 /* RoomsDataModel.swift in Sources */,
 				4B4F6AA9288EAB26009FD129 /* PersonDetailsViewModel.swift in Sources */,
+				4B7BC129289EBDF1001A3CB1 /* RoomListViewModel.swift in Sources */,
 				4B75680D288DD51A004E3FC4 /* MainMenuViewController.swift in Sources */,
 				4B7567E4288DD508004E3FC4 /* ViewController.swift in Sources */,
 				4B75680F288DD520004E3FC4 /* NavigationController.swift in Sources */,
 				4B756812288DD52D004E3FC4 /* TabBarController.swift in Sources */,
 				4B7567E0288DD508004E3FC4 /* AppDelegate.swift in Sources */,
+				4B7BC130289EC287001A3CB1 /* RoomListTableViewCell.swift in Sources */,
 				4B7567E2288DD508004E3FC4 /* SceneDelegate.swift in Sources */,
 				4B4F6AA0288EAB0A009FD129 /* PersonDetailsViewController.swift in Sources */,
 			);
@@ -849,7 +893,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -904,7 +948,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

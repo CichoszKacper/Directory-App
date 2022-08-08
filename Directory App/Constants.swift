@@ -33,5 +33,7 @@ struct Constants {
         
     }
     static let VirginMoneyTitle = "VIRGIN MONEY"
+    static let PeopleTitle = "People"
+    static let RoomsTitle = "Rooms"
     static let MainBrandColour = UIColor(hexString: "#C40202")
 }

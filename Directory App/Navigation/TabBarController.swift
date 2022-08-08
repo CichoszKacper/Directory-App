@@ -15,9 +15,10 @@ class TabBarController: UITabBarController {
     }
     
     func setUpTabBarController() {
-        let mainMenu = NavigationController(rootViewController: MainMenuViewController(viewModel: MainMenuViewModel()))
+        let mainMenu = NavigationController(rootViewController: MainMenuViewController())
         let peopleView = NavigationController(rootViewController: PeopleListViewController(viewModel: PeopleListViewModel()))
-        self.setViewControllers([mainMenu, peopleView], animated: true)
+        let roomsView = NavigationController(rootViewController: RoomListViewController(viewModel: RoomListViewModel()))
+        self.setViewControllers([mainMenu, peopleView, roomsView], animated: true)
         guard let items = self.tabBar.items else {
             return
         }
@@ -48,9 +49,9 @@ class TabBarController: UITabBarController {
             
             self.tabBar.standardAppearance = appearance
         }
-        let images = ["house", "gear"]
+        let images = ["house", "person", "person.3.sequence"]
         for (index, item) in items.enumerated() {
-            item.image = UIImage(systemName: images[index])
+            item.image = UIImage(named: images[index])
         }
     }
     

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MainMenuViewController: ModelledViewController<MainMenuViewModel> {
+class MainMenuViewController: UIViewController {
     @IBOutlet weak var backgroundView: UIView!
     @IBOutlet weak var titleLabel: UILabel!
     
