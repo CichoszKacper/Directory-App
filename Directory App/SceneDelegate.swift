@@ -7,10 +7,16 @@
 
 import UIKit
 
+enum Environment: String {
+    case liveEnvironment = "Live Environment"
+    case testingEnvironment = "QA Environment"
+}
+
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
+    @available(iOS 13.0, *)
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
