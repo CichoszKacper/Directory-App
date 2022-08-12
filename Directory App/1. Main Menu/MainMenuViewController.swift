@@ -16,6 +16,8 @@ class MainMenuViewController: UIViewController {
         self.setupUI()
     }
     
+    /// Added addWaveBackground whenever the layout is set.
+    /// This way the wave is added when we rotate the screen.
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         self.backgroundView.addWaveBackground(colour: Constants.MainBrandColour)

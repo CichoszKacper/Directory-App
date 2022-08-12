@@ -23,6 +23,7 @@ class PersonDetailsViewController: ModelledViewController<PersonDetailsViewModel
     var searchBarContainer: SearchBarContainerView?
     var searchBarButtonItem: UIBarButtonItem?
     
+    // MARK: - LifeCycle
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.hideSearchBar()
@@ -50,6 +51,11 @@ class PersonDetailsViewController: ModelledViewController<PersonDetailsViewModel
         }
     }
     
+    @objc func seachBarIconTapped() {
+        self.showSearchBar(searchBar: self.searchBar)
+    }
+    
+    // MARK: - Private Methods
     private func setupUI() {
         for label in self.detailsTitleLabels {
             label.textColor = Constants.MainBrandColour
@@ -67,16 +73,12 @@ class PersonDetailsViewController: ModelledViewController<PersonDetailsViewModel
         self.accountDateLabel.text = self.viewModel.getDate()
     }
     
-    @objc func seachBarIconTapped() {
-        self.showSearchBar(searchBar: self.searchBar)
-    }
-    
     private func setUpSearchBar() {
         self.searchBar.delegate = self
         self.searchBar.searchBarStyle = .minimal
         self.searchBar.showsCancelButton = true
         self.searchBarContainer = SearchBarContainerView(customSearchBar: self.searchBar)
-        self.searchBarContainer?.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: 44)
+        self.searchBarContainer?.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: Constants.SearchBarHeight)
         self.searchBarButtonItem = UIBarButtonItem(image: UIImage(named: "magnifyingglass"),
                                                    style: .plain,
                                                    target: self,

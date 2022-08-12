@@ -5,11 +5,15 @@
 //  Created by Kacper Cichosz on 06/08/2022.
 //
 
-import Foundation
+import UIKit
 
 class RoomListViewModel: ViewModel, ViewModelProtocol {
     var rooms: [RoomsDataModel]?
-    var filteredRooms: [RoomsDataModel]?
+    var filteredRooms: [RoomsDataModel]? {
+        didSet {
+            self.update?(.reload)
+        }
+    }
     
     var update: ((RoomListViewModel.UpdateType) -> Void)?
     enum UpdateType {
@@ -17,13 +21,16 @@ class RoomListViewModel: ViewModel, ViewModelProtocol {
     }
     var error: ((RoomListViewModel.ErrorType) -> Void)?
     enum ErrorType {
+        case canNotProcessData
     }
     
+    /// Method to download the room data using the NetworkManager and APi Endpoint key 'rooms'
     func downloadRoomData() {
         NetworkManager().downloadData(classType: [RoomsDataModel].self,
                                       settingsKey: Constants.Networking.NetworkingAPIKey,
                                       substitution: APIEndpoints.rooms.rawValue) { [weak self] roomsData, _, error in
             guard error == nil else {
+                self?.error?(.canNotProcessData)
                 return
             }
             
@@ -35,11 +42,9 @@ class RoomListViewModel: ViewModel, ViewModelProtocol {
     
     func freeRooms() {
         self.filteredRooms = self.filteredRooms?.filter {!$0.isOccupied}
-        self.update?(.reload)
     }
     
     func allRooms() {
         self.filteredRooms = self.rooms
-        self.update?(.reload)
     }
 }

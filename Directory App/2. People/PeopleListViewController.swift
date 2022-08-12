@@ -14,6 +14,7 @@ class PeopleListViewController: ModelledViewController<PeopleListViewModel> {
     var searchBarContainer: SearchBarContainerView?
     var searchBarButtonItem: UIBarButtonItem?
     
+    // MARK: - LifeCycle
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.hideSearchBar()
@@ -35,16 +36,26 @@ class PeopleListViewController: ModelledViewController<PeopleListViewModel> {
         }
     }
     
+    override func handle(_ error: PeopleListViewModel.ErrorType) {
+        switch error {
+        case .canNotProcessData:
+            Alerts().showAlert(title: Constants.Alerts.PeopleAlertTitle,
+                               message: Constants.Alerts.AlertMessage,
+                               viewController: self)
+        }
+    }
+    
     @objc func seachBarIconTapped() {
         self.showSearchBar(searchBar: self.searchBar)
     }
     
+    // MARK: - Private Methods
     private func setUpSearchBar() {
         self.searchBar.delegate = self
         self.searchBar.searchBarStyle = .minimal
         self.searchBar.showsCancelButton = true
         self.searchBarContainer = SearchBarContainerView(customSearchBar: self.searchBar)
-        self.searchBarContainer?.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: 44)
+        self.searchBarContainer?.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: Constants.SearchBarHeight)
         self.searchBarButtonItem = UIBarButtonItem(image: UIImage(named: "magnifyingglass"),
                                                    style: .plain,
                                                    target: self,
@@ -80,6 +91,7 @@ class PeopleListViewController: ModelledViewController<PeopleListViewModel> {
     }
 }
 
+// MARK: - UITableViewDataSource
 extension PeopleListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.viewModel.filteredPeople?.count ?? 0
@@ -92,6 +104,7 @@ extension PeopleListViewController: UITableViewDataSource {
     }
 }
 
+// MARK: - UITableViewDelegate
 extension PeopleListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let filteredPeople = self.viewModel.filteredPeople,
@@ -122,7 +135,6 @@ extension PeopleListViewController: UISearchBarDelegate {
             let emailMatch = person.email.range(of: searchText, options: NSString.CompareOptions.caseInsensitive)
             return firstNameMatch != nil || lastNameMatch != nil || jobTitleMatch != nil || emailMatch != nil}
         )
-        self.viewModel.update?(.reload)
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {

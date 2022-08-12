@@ -19,8 +19,15 @@ class RoomListTableViewCell: UITableViewCell {
                                 borderColor: Constants.MainBrandColour.cgColor)
         self.idLabel.text = room.id
         self.idLabel.textColor = Constants.MainBrandColour
-        self.occupancyLabel.text = "Room max occupancy is: \(room.maxOccupancy)"
-        self.isOccupiedLabel.text = room.isOccupied ? "Rooms is full" : "Room is empty"
+        self.setupAccessability(room: room)
+        self.occupancyLabel.text = "\(Constants.Rooms.RoomMaxOccupanyString) \(room.maxOccupancy)"
+        self.isOccupiedLabel.text = room.isOccupied ? Constants.Rooms.RoomIsFullString : Constants.Rooms.RoomIsEmptyString
         self.isOccupiedView.backgroundColor = room.isOccupied ? .systemRed : .systemGreen
+    }
+    
+    func setupAccessability(room: RoomsDataModel) {
+        self.isAccessibilityElement = true
+        self.idView.isAccessibilityElement = true
+        self.idView.accessibilityLabel = "\(Constants.Rooms.RoomIDString) \(room.id)"
     }
 }
