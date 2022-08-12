@@ -11,6 +11,7 @@ class RoomListViewController: ModelledViewController<RoomListViewModel> {
     @IBOutlet weak var roomsTableView: UITableView!
     @IBOutlet weak var occupancySegmentedControl: UISegmentedControl!
     
+    // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         self.viewModel.downloadRoomData()
@@ -26,6 +27,15 @@ class RoomListViewController: ModelledViewController<RoomListViewModel> {
         }
     }
     
+    override func handle(_ error: RoomListViewModel.ErrorType) {
+        switch error {
+        case .canNotProcessData:
+            Alerts().showAlert(title: Constants.Alerts.RoomsAlertTitle,
+                               message: Constants.Alerts.AlertMessage,
+                               viewController: self)
+        }
+    }
+    
     @IBAction func occupancyValueChanged() {
         switch self.occupancySegmentedControl.selectedSegmentIndex {
         case 0:
@@ -38,6 +48,7 @@ class RoomListViewController: ModelledViewController<RoomListViewModel> {
     }
 }
 
+// MARK: - UITableViewDataSource
 extension RoomListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.viewModel.filteredRooms?.count ?? 0

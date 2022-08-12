@@ -7,6 +7,11 @@
 
 import UIKit
 
+enum Environment: String {
+    case liveEnvironment = "Live Environment"
+    case testingEnvironment = "QA Environment"
+}
+
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?

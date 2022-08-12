@@ -35,6 +35,9 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <accessibility key="accessibilityConfiguration">
+                            <bool key="isElement" value="YES"/>
+                        </accessibility>
                         <constraints>
                             <constraint firstItem="Lfz-AN-jR7" firstAttribute="top" secondItem="UvO-jG-StK" secondAttribute="top" constant="25" id="22x-ww-HFY"/>
                             <constraint firstAttribute="trailing" secondItem="Lfz-AN-jR7" secondAttribute="trailing" constant="10" id="7f1-oX-tYJ"/>
@@ -47,16 +50,16 @@
                         </constraints>
                     </view>
                     <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="4Qi-VO-eG9">
-                        <rect key="frame" x="120" y="10" width="138.5" height="41"/>
+                        <rect key="frame" x="120" y="10" width="311" height="41"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Max Occupancy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rPu-mG-gw0">
-                                <rect key="frame" x="0.0" y="0.0" width="138.5" height="20.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Max Occupancy" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rPu-mG-gw0">
+                                <rect key="frame" x="0.0" y="0.0" width="311" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Room is Occupied" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3aQ-6e-mnB">
-                                <rect key="frame" x="0.0" y="20.5" width="138.5" height="20.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Room is Occupied" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3aQ-6e-mnB">
+                                <rect key="frame" x="0.0" y="20.5" width="311" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -81,6 +84,7 @@
                     <constraint firstAttribute="bottom" secondItem="UvO-jG-StK" secondAttribute="bottom" constant="10" id="RGj-YT-3hE"/>
                     <constraint firstAttribute="bottom" secondItem="4Qi-VO-eG9" secondAttribute="bottom" constant="10" id="VQc-cy-EQL"/>
                     <constraint firstItem="4Qi-VO-eG9" firstAttribute="leading" secondItem="UvO-jG-StK" secondAttribute="trailing" constant="20" id="XFx-1Q-MdA"/>
+                    <constraint firstItem="sDY-Yq-OZk" firstAttribute="leading" secondItem="4Qi-VO-eG9" secondAttribute="trailing" constant="10" id="b0h-AB-Ipo"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

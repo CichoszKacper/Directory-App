@@ -17,6 +17,11 @@ struct Constants {
     struct Networking {
         static let NetworkingAPIKey = "https://61e947967bc0550017bc61bf.mockapi.io/api/v1/"
     }
+    struct Alerts {
+        static let PeopleAlertTitle = "Error loading People"
+        static let RoomsAlertTitle = "Error loading Rooms"
+        static let AlertMessage = "Please try again"
+    }
     struct Font {
         static let VirginMoneyTitleFont = "HelveticaNeue"
         static let VirginMoneyTitleFontSize = 30.0
@@ -32,8 +37,15 @@ struct Constants {
         static let imagePlaceholder = UIImage(named: "imageProfilePlaceholder")!
         
     }
+    struct Rooms {
+        static let RoomMaxOccupanyString = "Room max occupancy is:"
+        static let RoomIsEmptyString = "Room is empty"
+        static let RoomIsFullString = "Room is full"
+        static let RoomIDString = "Room ID:"
+    }
     static let VirginMoneyTitle = "VIRGIN MONEY"
     static let PeopleTitle = "People"
     static let RoomsTitle = "Rooms"
     static let MainBrandColour = UIColor(hexString: "#C40202")
+    static let SearchBarHeight: CGFloat = 44.0
 }

@@ -9,9 +9,15 @@ import UIKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    var window: UIWindow? = UIWindow()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        let tabBarController = TabBarController()
+        let navigationController = NavigationController(rootViewController: tabBarController)
+        navigationController.navigationBar.backIndicatorImage = UIImage(named: "chevron.backward.circle.fill")
+        navigationController.navigationBar.backIndicatorTransitionMaskImage = UIImage(named: "chevron.backward.circle.fill")
+        self.window?.rootViewController = navigationController
+        self.window?.makeKeyAndVisible()
         return true
     }
 

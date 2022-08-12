@@ -6,11 +6,7 @@
 //
 
 import Foundation
-
-enum NetworkError: Error {
-    case noDataAvailable
-    case canNotProcessData
-}
+import UIKit
 
 struct NetworkManager {
     public typealias ModelCompletionHandler<T: Codable> = (T?, Error?) -> Void

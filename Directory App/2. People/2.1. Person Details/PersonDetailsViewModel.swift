@@ -18,15 +18,18 @@ class PersonDetailsViewModel: ViewModel, ViewModelProtocol {
         self.person = person
         self.people = people
     }
+    
     var update: ((PersonDetailsViewModel.UpdateType) -> Void)?
     enum UpdateType {
         case personDetails
         case searchPeople
     }
+    
     var error: ((PersonDetailsViewModel.ErrorType) -> Void)?
     enum ErrorType {
     }
     
+    /// Method to return the string with the date given by the createdAt from API
     func getDate() -> String {
         let formatter = ISO8601DateFormatter()
         formatter.formatOptions.insert(.withFractionalSeconds)
